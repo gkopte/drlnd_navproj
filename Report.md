@@ -35,3 +35,9 @@ The Q-Network uses only fully connected layers and doesn't include more complex 
 A buffer is created to store the interactions between the agent and the environment. This buffer is populated with the experiences of the agent, each experience being a tuple consisting of the state, action, reward, the next state, and a 'done' flag. When the buffer reaches its capacity, it begins to overwrite old experiences with new ones. No version of the prioritized Replay Buffer has been implemented in this solution.
 
 
+# Ideas for Future Work
+
+The first improvement worth exploring is the implementation of Double DQN. This method, which can be incorporated with minimal adjustments to the existing learning algorithm, could potentially boost the performance of our agent by addressing the overestimation bias of traditional DQN.
+
+Another strategy to boost our agent's performance is the integration of Prioritized Experience Replay. This technique gives precedence to more informative experiences, potentially accelerating and improving the learning process by focusing on important transitions.
+

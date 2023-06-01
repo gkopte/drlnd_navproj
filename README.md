@@ -38,7 +38,7 @@ The task is episodic, and in order to solve the environment, your agent must get
 
 ### Instructions
 
-Run `Navigation.ipynb` to either train a new agent from scratch or evaluate an already trained agent.
+Run `Navigation.ipynb` to either train a new agent from scratch or evaluate an already trained agent. More information about the agent you find in `Report.md`
 
 
 ### Evaluation

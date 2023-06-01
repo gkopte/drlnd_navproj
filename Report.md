@@ -1,7 +1,15 @@
 
 # Design Choices
 
-The approach for this project was to employ a simple, standard form of Deep Q-Learning with a straightforward replay buffer. The architecture of the neural networks used in this project is simple and includes two hidden layers with ReLU activation functions and an output layer with no activation function. Given the relatively uncomplicated nature of the problem and the modest size of the state space, there was no apparent need for implementing advanced variants of Deep Q-Learning or specialized forms of experience replay.
+The approach for this project was to employ a simple, standard form of Deep Q-Learning with a straightforward replay buffer. The architecture of the neural networks used in this project is simple and includes two hidden layers with ReLU activation functions and an output layer with no activation function. Each hidden layer with 64 neurons. Given the relatively uncomplicated nature of the problem and the modest size of the state space, there was no apparent need for implementing advanced variants of Deep Q-Learning or specialized forms of experience replay.
+
+- **Replay buffer size (BUFFER_SIZE):** `1e5`
+- **Minibatch size (BATCH_SIZE):** `64`
+- **Discount factor (GAMMA):** `0.99`
+- **Soft update of target parameters (TAU):** `1e-3`
+- **Learning rate (LR):** `5e-4`
+- **How often to update the network (UPDATE_EVERY):** `4`
+
 
 # Agent
 
@@ -17,7 +25,7 @@ The approach for this project was to employ a simple, standard form of Deep Q-Le
 
 The agent uses a neural network for the function approximation of the Q-values. It includes two instances of the Q-Network, a local model qnetwork_local and a target model qnetwork_target. The local model is the one being trained, and the target model is used to compute the target Q-values during the learning step.
 
-The network architecture is fairly simple and consists of two hidden layers with ReLU activation functions and an output layer without an activation function. The reason for not having an activation function at the output layer is because in Q-learning, we want to directly predict the Q-value of each action, which can theoretically be any real number, so we don't want to limit the output range with an activation function.
+The network architecture is fairly simple and consists of two hidden layers with ReLU activation functions and an output layer without an activation function. Each hidden layer with 64 neurons. The reason for not having an activation function at the output layer is because in Q-learning, we want to directly predict the Q-value of each action, which can theoretically be any real number, so we don't want to limit the output range with an activation function.
 
 The Q-Network uses only fully connected layers and doesn't include more complex layer types like convolutional layers because the state representation is a relatively small, flat vector of features. In our case, the state size is 37, which is a moderate-sized vector that can be effectively processed using fully connected layers. 
 
